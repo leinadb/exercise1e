@@ -32,4 +32,17 @@ public class CalculatorUtilAdditionTest {
 		assertEquals("2 + 2 = 4", result);
 		verify(calculator).add(anyInt(), anyInt()); // check if our calculator mock was really invoked.
 	}	
+
+	@Test
+	public void test13plus19() {
+		// given
+		doReturn(32).when(calculator).add(anyInt(), anyInt());
+
+		// when
+		String result = calcUtil.getAdditionText(13, 19);
+
+		// then
+		assertEquals("13 + 19 = 32", result);
+		verify(calculator).add(anyInt(), anyInt()); // check if our calculator mock was really invoked.
+	}
 }
